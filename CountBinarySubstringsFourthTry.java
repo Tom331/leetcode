@@ -3,6 +3,12 @@ package ctci;
 public class CountBinarySubstringsFourthTry {
 	
 	public static void main(String[] args) {
+		
+		/*
+		 * BRANCH 'MASTER'
+		 * This branch saves more work than temp, but does not pass test cases
+		 */
+		
 		/* TEST CASES
 		 * 3: 00110 
 		 * 6: 00110011
@@ -11,8 +17,6 @@ public class CountBinarySubstringsFourthTry {
 		 * 2: 00100
 		 * 	might be 3
 		 */
-		
-		//TST
 		
 		
 		String s = "00100";
