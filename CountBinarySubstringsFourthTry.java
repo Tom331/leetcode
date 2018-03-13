@@ -3,10 +3,9 @@ package ctci;
 public class CountBinarySubstringsFourthTry {
 	
 	public static void main(String[] args) {
-		
 		/*
-		 * BRANCH 'MASTER'
-		 * This branch saves more work than temp, but does not pass test cases
+		 * BRANCH 'TEMP'
+		 * correct for all my test cases, but gets 'time limit exceeded' on test case 37/90 when submitting
 		 */
 		
 		/* TEST CASES
@@ -15,8 +14,11 @@ public class CountBinarySubstringsFourthTry {
 		 * 4: 10101
 		 * 5: 1110000100
 		 * 2: 00100
-		 * 	might be 3
+		 * 	  might be 3
 		 */
+		
+		//TST
+		//test2
 		
 		
 		String s = "00100";
