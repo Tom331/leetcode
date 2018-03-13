@@ -14,7 +14,7 @@ public class CountBinarySubstringsFourthTry {
 		 * 4: 10101
 		 * 5: 1110000100
 		 * 2: 00100
-		 * 	might be 3
+		 * 	  might be 3
 		 */
 		
 		//TST
