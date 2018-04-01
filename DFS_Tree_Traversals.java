@@ -12,6 +12,7 @@ public class DFS_Tree_Traversals {
 	     int val;
 	     TreeNode left;
 	     TreeNode right;
+		 String text;
 	     TreeNode(int x) { val = x; }
 	 }
 	 	 

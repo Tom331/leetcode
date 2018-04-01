@@ -1,6 +1,6 @@
 package ctci;
 
-public class Practice {
+public class RansomNote {
 	
 	public static boolean canConstruct(String ransomNote, String magazine) {
         boolean canCreate = true;

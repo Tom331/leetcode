@@ -7,6 +7,7 @@ import javax.swing.plaf.synth.SynthSeparatorUI;
 
 class TreeNode {
     int val;
+    String text = "default";
     TreeNode left;
     TreeNode right;
     Boolean visited;
