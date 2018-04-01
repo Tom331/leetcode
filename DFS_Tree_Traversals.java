@@ -18,9 +18,9 @@ public class DFS_Tree_Traversals {
 	 	 
 	public static class Solution {
 		
-public Solution() {
-			
-		}
+//public Solution() {
+//			
+//		}
 
 //		public Solution(ctci.ConvertSortedArrayToBST_NotAccepted.TreeNode answer) {
 //			//this.inorderTraversal = inorderTraversal;
@@ -73,6 +73,29 @@ public Solution() {
 	        }
 	        return result;
 	    }
+	    
+	    
+	    
+	    //RECURSIVE METHODS
+	    
+	    int recursionLevel = -1;
+	    public void printInorderRecursive(TreeNode node)
+	    {
+	    	recursionLevel++;
+	        if (node == null) {
+	        	System.out.print("\n~~~\nNode: NULL" + "\nRecursion Level: " + recursionLevel);
+	            return;
+	        }
+	 
+	        /* first recur on left child */
+	        printInorderRecursive(node.left);
+	 
+	        /* then print the data of node */
+	        System.out.print("\n~~~\nNode:" + node.val + "\nRecursion Level: " + recursionLevel);
+	 
+	        /* now recur on right child */
+	        printInorderRecursive(node.right);
+	    }
 	}
 	
 	public static void main(String[] args) {
@@ -80,10 +103,10 @@ public Solution() {
 		int[] myArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		
 		//setting root value:
-		TreeNode originalRoot = new TreeNode(-10);
+		TreeNode originalRoot = new TreeNode(1);
 		
 		//setting up left side of root:
-		originalRoot.left = new TreeNode(-3);
+		originalRoot.left = new TreeNode(2);
 		originalRoot.left.left = new TreeNode(4);
 		originalRoot.left.right = new TreeNode(5);
 		
@@ -91,7 +114,8 @@ public Solution() {
 		originalRoot.right = new TreeNode(3);
 		
 		Solution solution = new Solution();
-		System.out.println("tree:\n" + solution.inorderTraversal(originalRoot));
+		System.out.println("tree:");
+		solution.printInorderRecursive(originalRoot);
 	}
 }
 
