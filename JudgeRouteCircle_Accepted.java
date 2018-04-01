@@ -1,30 +1,34 @@
 package ctci;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 public class JudgeRouteCircle_Accepted {
 	
 	public static void main(String[] args) {
 		System.out.println(judgeCircle("UUDDDLLRUR"));
 	}
 	
-	public static boolean judgeCircle(String moves) {
-		int numU = 0;
-		int numD = 0;
-		int numL = 0;
-		int numR = 0;
+	public static <T> boolean judgeCircle(String moves) {
+		int x = 0;
+		int y = 0;
+		
 		for(int i = 0; i < moves.length(); i++) {
 			if(moves.charAt(i) == 'U')
-				numU++;
+				x++;
 			if(moves.charAt(i) == 'D')
-				numD++;
+				x--;
 			if(moves.charAt(i) == 'L')
-				numL++;
+				y--;
 			if(moves.charAt(i) == 'R')
-				numR++;
+				y++;
 		}
-		if(numU == numD && numL == numR)
-			return true;
-		else
-			return false;
+		return x == 0 && y == 0;
 	}
 
 }
