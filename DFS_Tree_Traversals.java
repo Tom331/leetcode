@@ -78,12 +78,30 @@ public class DFS_Tree_Traversals {
 	    
 	    //RECURSIVE METHODS
 	    
-	    int recursionLevel = -1;
+	    int level = -1; // -1 denotes null node
+	    ArrayList<Integer> inorderResult = new ArrayList<Integer>();
+	    
+	    class Frame {
+	    	private int value;
+	    	private int recursionLevel;
+	    	
+	    	public Frame(int value, int recursionLevel) {
+	    		this.value = value;
+	    		this.recursionLevel = recursionLevel;
+	    	}
+	    	
+	    	public String toString() {
+	    		String result = "\n\nvalue: " + value + "\nrecursion level: " + recursionLevel;
+	    		return result;
+	    	}
+	    }
+	    ArrayList<Frame> stackFrame = new ArrayList<Frame>();
 	    public void printInorderRecursive(TreeNode node)
-	    {
-	    	recursionLevel++;
+	    {	
 	        if (node == null) {
-	        	System.out.print("\n~~~\nNode: NULL" + "\nRecursion Level: " + recursionLevel);
+	        	//System.out.print("\n~~~\nNode: NULL" + "\nRecursion Level: " + recursionLevel);
+	        	System.out.println("null node");
+	        	stackFrame.add(new Frame(-1, level));
 	            return;
 	        }
 	 
@@ -91,12 +109,19 @@ public class DFS_Tree_Traversals {
 	        printInorderRecursive(node.left);
 	 
 	        /* then print the data of node */
-	        System.out.print("\n~~~\nNode:" + node.val + "\nRecursion Level: " + recursionLevel);
+	        //System.out.print("\n~~~\nNode:" + node.val + "\nRecursion Level: " + recursionLevel);
+	        inorderResult.add(node.val);
 	 
 	        /* now recur on right child */
 	        printInorderRecursive(node.right);
+	        System.out.println("\ninorderResult: " + inorderResult);
+	        System.out.println("\nstackFrame: " + stackFrame.toString());
+	        //return implied here
 	    }
-	}
+	    
+	    
+	    
+	} //end class Solution
 	
 	public static void main(String[] args) {
 		
@@ -114,7 +139,6 @@ public class DFS_Tree_Traversals {
 		originalRoot.right = new TreeNode(3);
 		
 		Solution solution = new Solution();
-		System.out.println("tree:");
 		solution.printInorderRecursive(originalRoot);
 	}
 }
